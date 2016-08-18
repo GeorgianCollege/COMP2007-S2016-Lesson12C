@@ -5,6 +5,7 @@ using System.Web;
 using COMP2007_S2016_Lesson12C.Models;
 using System.Web.Mvc;
 
+
 namespace COMP2007_S2016_Lesson12C.Models
 {
     public class ShoppingCart
@@ -103,7 +104,9 @@ namespace COMP2007_S2016_Lesson12C.Models
                           where cartItems.CartId == ShoppingCartId
                           select (int?)cartItems.Count).Sum();
             // Return 0 if all entries are null
-            return count ?? 0;
+            return count ?? 0; 
+
+            return 0;
         }
         public decimal GetTotal()
         {
@@ -132,7 +135,10 @@ namespace COMP2007_S2016_Lesson12C.Models
                     OrderId = order.OrderId,
                     UnitPrice = item.Album.Price,
                     Quantity = item.Count
+
+                    
                 };
+
                 // Set the order total of the shopping cart
                 orderTotal += (item.Count * item.Album.Price);
 

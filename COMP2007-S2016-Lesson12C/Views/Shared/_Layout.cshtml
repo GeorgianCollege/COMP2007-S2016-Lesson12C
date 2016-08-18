@@ -30,9 +30,17 @@
             </div>
         </div>
     </div>
-    @{Html.RenderAction("GenreMenu", "Store");}
+    
     <div class="main container body-content">
-        @RenderBody()
+        <div class="row">
+            <div class="col-md-3">
+                @{Html.RenderAction("GenreMenu", "Store");}
+            </div>
+            <div class="col-md-7">
+                @RenderBody()
+            </div>
+        </div>
+       
         <hr />
     </div>
 
